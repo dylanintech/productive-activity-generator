@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import buildspaceLogo from '../assets/buildspace-logo.png';
+import Typewriter from 'typewriter-effect';
 
 
 
@@ -41,7 +42,14 @@ const Home = () => {
       <div className="container">
         <div className="header">
           <div className="header-title">
-            <h1>Productive activity generator for <span id='typewriter-text'>restless people</span></h1>
+            <h1>Productivity machine for 
+      <Typewriter
+  options={{
+    strings: ['developers', 'startup founders', 'artists', 'students'],
+    autoStart: true,
+    loop: true,
+  }}
+/></h1>
           </div>
           <div className="header-subtitle">
             <h2>Do you feel like you could be doing something more productive rn? Type in your current occupation, one of your hobbies, and one goal you have to generate some personalized productive things you could be doing. Tip: Make sure to be as specific as possible!</h2>
