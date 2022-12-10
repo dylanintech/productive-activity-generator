@@ -347,6 +347,13 @@ textarea {
     color: rgba(255, 255, 255, 0.5);
 }
 
+.extension-text {
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+}
+
+
 @media (min-width: 810px) and (max-width: 1199px) {
     .container {
         max-width: 600px;

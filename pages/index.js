@@ -70,6 +70,8 @@ const Home = () => {
               </div>
               <div className='output-content'>
                 <p>{apiOutput}</p>
+                <br />
+                <p className='extension-text'>If you like this app, you can try downloading this chrome extension I made: <a href="ttps://github.com/dylanintech/productive-activity-generator-chrome-extension">productive activity generator</a> , it lets you highlight text anywhere and use it to generate a list like the one you see above! Note: Only works on Calmly for now...</p>
               </div>
             </div>
           )}
