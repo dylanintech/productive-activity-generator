@@ -1,3 +1,3 @@
-# buildspace 
+# Productive Activity Generator
 ### Welcome 👋
-This is the starter template for the [build your own AI writing assistant w/ GPT-3](https://buildspace.so/builds/ai-writer) project.
+This is a web app that lets you input your occupation, hobby, and goal to generate a list of productive activities for you using the power of **GPT-3**!
