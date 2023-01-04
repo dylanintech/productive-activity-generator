@@ -30,10 +30,33 @@ body {
     height: fit-content;
     max-width: 975px;
     overflow: auto;
-    padding: 50px;
+    padding-top: 50px;
     position: relative;
-    width: auto;
+    width: 100%;
     gap: 64px;
+}
+
+.top {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+
+.login {
+  display: inherit;
+  justify-content: inherit;
+  align-items: inherit;
+  font-size: 0.85rem;
+  max-width: 100%;
+  width: 100%;
+  z-index: 2;
+}
+
+.login a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .header {    
@@ -58,18 +81,28 @@ body {
     line-height: 1.2em;
     text-align: center;
     margin: 0;
+    
 }
 
-/* #typewriter-text {
-    border-right: .05em solid;
-    animation: caret 1s steps(1) infinite;
-  }
-  
-  @keyframes caret {
-    50% {
-      border-color: transparent;
-    }
-  } */
+.plans-container {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+.plan {
+    display: flex;
+    flex-flow: column;
+    border: 2px solid white;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 2rem;
+    width: 50%;
+    text-align: center;
+    color: white;
+}
+
 
 .header-subtitle h2 {
     font-size: 20px;
@@ -78,6 +111,26 @@ body {
     line-height: 1.4em;
     color: rgba(255, 255, 255, 0.75);
     text-align: center;
+}
+
+.typewriter {
+    background: -webkit-linear-gradient( #373B44, #4286f4);
+    -webkit-background-clip: text;
+    background-clip: text;
+   -webkit-text-fill-color: transparent;
+}
+
+.stripe-page {
+    color: white;
+    margin-top: 2rem;
+    text-decoration: underline;
+}
+
+.login {
+    color: white;
+    margin-top: 2rem;
+    width: 5%;
+    text-decoration: underline;
 }
 
 .prompt-container {
@@ -189,7 +242,8 @@ textarea {
     align-items: flex-start;
     background-color: rgb(255, 79, 18);
     /* background-image: linear-gradient(to right, rgb(1 134 218), rgb(182 49 167)); */
-    background-image: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    /* background-image: linear-gradient(to right, #0f2027, #203a43, #2c5364); */
+    background: -webkit-linear-gradient( #373B44, #4286f4);
     border-radius: 100px;
     display: flex;
     flex: 0 0 auto;
@@ -366,7 +420,7 @@ textarea {
     }
 
     .prompt-box {
-        width: 100%;
+        width: 80%;
     }
 }
 
@@ -382,7 +436,7 @@ textarea {
     }
 
     .prompt-box {
-        width: 100%;
+        width: 80%;
     }
 }
 
@@ -398,6 +452,9 @@ textarea {
 
     .header-subtitle h2 {
         text-align: center;
+        margin-bottom: 0;
+        margin-top: 2.5rem;
+        line-height: 1.6;
     }
 
     .key-stroke, .or {
@@ -414,7 +471,19 @@ textarea {
     }
 
     .prompt-box {
-        width: 100%;
+        width: 80%;
+    }
+
+    .logo-img {
+        display: none;
+    }
+
+    .login {
+        display: none;
+    }
+
+    .stripe-page {
+        display: none;
     }
 }
 

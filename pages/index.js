@@ -1,8 +1,26 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
+import Link from 'next/link';
 import buildspaceLogo from '../assets/buildspace-logo.png';
 import Typewriter from 'typewriter-effect';
+
+
+const TwitterButton = () => {
+  const text = encodeURIComponent("Incredible.%3E This web app literally solved my restlessness. It uses AI to generate a list of productive activities you could be doing based on your job, hobby, goal, age, and top skill. My prompt: <insert your prompt> The first activity: <insert the first generated activity> You can try it for yourself at productivity-machine.com right now!");
+  const url = encodeURIComponent("https://productivity-machine.com");
+  const hashtags = encodeURIComponent("productivity, AI, webapp");
+
+  return (
+    <a
+      href={`https://twitter.com/intent/tweet?text=${text}&url=${url}&hashtags=${hashtags}`}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Tweet how productive you're gonna be
+    </a>
+  );
+};
 
 
 
@@ -26,7 +44,7 @@ const Home = () => {
 
     const data = await response.json();
     const { output } = data;
-    console.log("OpenAI replied...", output.text)
+    console.log("OpenAI replied...", output.text);
 
     setApiOutput(`${output.text}`);
     setIsGenerating(false);
@@ -40,24 +58,30 @@ const Home = () => {
         <title>Productive Activity Generator | by dylan</title>
       </Head>
       <div className="container">
-        <div className="header">
-          <div className="header-title">
-            <h1>Productivity machine for 
-      <Typewriter
-  options={{
-    strings: ['developers', 'startup founders', 'artists', 'students'],
-    autoStart: true,
-    loop: true,
-  }}
-/></h1>
+        <div className="top">
+        {/* <p className='login'>Log in.</p> */}
+          <div className="header">
+            <div className="header-title">
+              <h1>productivity machine for 
+                <Typewriter
+            options={{
+              strings: ['developers', 'startup founders', 'artists', 'students'],
+              autoStart: true,
+              loop: true,
+              wrapperClassName: 'typewriter',
+              cursorClassName: 'typewriter',
+            }}
+          /></h1>
+            </div>
+            <div className="header-subtitle">
+              <h2>do you feel like you could be doing something more productive right now? never again. enter your job, hobby, goal, age, and skill to have artificial intelligence tell you the most optimal tasks you could be doing (make sure to be as specific as possible; output will be shown on the bottom 👇)!</h2>
+            </div>
           </div>
-          <div className="header-subtitle">
-            <h2>Do you feel like you could be doing something more productive rn? Type in your current occupation, one of your hobbies, and one goal you have to generate some personalized productive things you could be doing. Tip: Make sure to be as specific as possible!</h2>
-          </div>
+          {/* <Link className='stripe-page' href='/plans'>Plans</Link> */}
         </div>
         <div className="prompt-container">
           <textarea 
-          placeholder='technical co-founder of an AI company, reading books about startups, raise $1m for my company from a16z'
+          placeholder='technical co-founder of an AI startup, building side projects, raise $1 million for my startup from the venture capital firm Andreessen Horowitz, 21, can manage people very well'
           className='prompt-box' 
           value={userInput}
           onChange={onUserChangedText}
@@ -69,6 +93,9 @@ const Home = () => {
               </div>
             </a>
           </div>
+          {/* <p>If you like this app, shoot me an <a href="mailto:dylanmolinabusiness@gmail.com">email</a> and put "productivity machine" in the line to get early access to the Notion chrome extension!</p>  */}
+          {/* <a target="_blank" rel="noreferrer" href="https://twitter.com/intent/tweet?text=Incredible%3E<Type your prompt> " class="twitter-share-button" data-show-count="false">Tweett</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> */}
+          {/* <TwitterButton className="badge" /> */}
           {apiOutput && (
             <div className='output'>
               <div className='output-header-container'>
@@ -79,7 +106,9 @@ const Home = () => {
               <div className='output-content'>
                 <p>{apiOutput}</p>
                 <br />
-                <p className='extension-text'>If you like this app, you can try downloading this chrome extension I made: <a href="https://github.com/dylanintech/productive-activity-generator-chrome-extension">productive activity generator</a> , it lets you highlight text anywhere and use it to generate a list like the one you see above! Note: Only works on Calmly for now...</p>
+                {/* <p className='extension-text'>If you like this app, you can try downloading this chrome extension I made: <a href="https://github.com/dylanintech/productive-activity-generator-chrome-extension">productive activity generator</a> , it lets you highlight text anywhere and use it to generate a list like the one you see above! Note: Only works on Calmly for now...</p> */}
+                <p className='extension-text'>If you like this app, shoot me an <a href="mailto:dylanmolinabusiness@gmail.com">email</a> and put "productivity machine" in the subject line to get early access to the Notion chrome extension!</p> 
+                
               </div>
             </div>
           )}
@@ -93,7 +122,7 @@ const Home = () => {
         >
           <div className="badge">
             {/* <Image src={buildspaceLogo} alt="buildspace logo" /> */}
-            <p>built with ❤️ by Dylan </p> 
+            <p>built with ❤️ by dylan </p> 
           </div>
         </a>
       </div>
