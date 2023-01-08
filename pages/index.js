@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
+import Script from 'next/script';
 import buildspaceLogo from '../assets/buildspace-logo.png';
 import Typewriter from 'typewriter-effect';
 
 
 const TwitterButton = () => {
-  const text = encodeURIComponent("Incredible.%3E This web app literally solved my restlessness. It uses AI to generate a list of productive activities you could be doing based on your job, hobby, goal, age, and top skill. My prompt: <insert your prompt> The first activity: <insert the first generated activity> You can try it for yourself at productivity-machine.com right now!");
+  const text = encodeURIComponent("Incredible. This web app literally solved my restlessness. It uses AI to generate a list of productive activities you could be doing based on your job, hobby, goal, age, and top skill. My prompt: <insert your prompt> The first activity: <insert the first generated activity> You can try it for yourself at productivity-machine.com right now!");
   const url = encodeURIComponent("https://productivity-machine.com");
   const hashtags = encodeURIComponent("productivity, AI, webapp");
 
@@ -49,6 +50,7 @@ const Home = () => {
     setApiOutput(`${output.text}`);
     setIsGenerating(false);
   }
+
   const onUserChangedText = (evt) => {
     setUserInput(evt.target.value);
   }
@@ -57,6 +59,23 @@ const Home = () => {
       <Head>
         <title>Productive Activity Generator | by dylan</title>
       </Head>
+      
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-65KCTDRVCF"
+        strategy="afterInteractive"
+      />
+      {/* <!-- Global site tag (gtag.js) - Google Analytics -- */}
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-65KCTDRVCF');
+        `}
+      </Script>
+    
+
       <div className="container">
         <div className="top">
         {/* <p className='login'>Log in.</p> */}
@@ -94,7 +113,7 @@ const Home = () => {
             </a>
           </div>
           {/* <p>If you like this app, shoot me an <a href="mailto:dylanmolinabusiness@gmail.com">email</a> and put "productivity machine" in the line to get early access to the Notion chrome extension!</p>  */}
-          {/* <a target="_blank" rel="noreferrer" href="https://twitter.com/intent/tweet?text=Incredible%3E<Type your prompt> " class="twitter-share-button" data-show-count="false">Tweett</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> */}
+          {/* <a target="_blank" rel="noreferrer" href="https://twitter.com/intent/tweet?text=Incredible%3E<Type your prompt> " class="twitter-share-button" data-show-count="false">Tweett</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></cript> */}
           {/* <TwitterButton className="badge" /> */}
           {apiOutput && (
             <div className='output'>
