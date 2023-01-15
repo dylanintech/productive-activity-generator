@@ -79,6 +79,7 @@ const Home = () => {
       <div className="container">
         <div className="top">
         {/* <p className='login'>Log in.</p> */}
+        {/* <a href="https://www.producthunt.com/posts/productivity-machine?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-productivity&#0045;machine" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=374143&theme=dark" alt="productivity&#0032;machine - The&#0032;place&#0032;you&#0032;go&#0032;to&#0032;when&#0032;you&#0039;re&#0032;feeling&#0032;restless&#0046; | Product Hunt" style={{ width: "250px", height: "54px" }} width="250" height="54" /></a> */}
           <div className="header">
             <div className="header-title">
               <h1>productivity machine for 
@@ -112,9 +113,11 @@ const Home = () => {
               </div>
             </a>
           </div>
+          {/* <a href="https://www.producthunt.com/posts/productivity-machine?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-productivity&#0045;machine" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=374143&theme=dark" alt="productivity&#0032;machine - The&#0032;place&#0032;you&#0032;go&#0032;to&#0032;when&#0032;you&#0039;re&#0032;feeling&#0032;restless&#0046; | Product Hunt" style={{ width: "250px", height: "54px" }} width="250" height="54" /></a> */}
           {/* <p>If you like this app, shoot me an <a href="mailto:dylanmolinabusiness@gmail.com">email</a> and put "productivity machine" in the line to get early access to the Notion chrome extension!</p>  */}
           {/* <a target="_blank" rel="noreferrer" href="https://twitter.com/intent/tweet?text=Incredible%3E<Type your prompt> " class="twitter-share-button" data-show-count="false">Tweett</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></cript> */}
           {/* <TwitterButton className="badge" /> */}
+          {/* <a href="https://www.producthunt.com/posts/productivity-machine?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-productivity&#0045;machine" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=374143&theme=light" alt="productivity&#0032;machine - The&#0032;place&#0032;you&#0032;go&#0032;to&#0032;when&#0032;you&#0039;re&#0032;feeling&#0032;restless&#0046; | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a> */}
           {apiOutput && (
             <div className='output'>
               <div className='output-header-container'>
@@ -126,8 +129,10 @@ const Home = () => {
                 <p>{apiOutput}</p>
                 <br />
                 {/* <p className='extension-text'>If you like this app, you can try downloading this chrome extension I made: <a href="https://github.com/dylanintech/productive-activity-generator-chrome-extension">productive activity generator</a> , it lets you highlight text anywhere and use it to generate a list like the one you see above! Note: Only works on Calmly for now...</p> */}
-                <p className='extension-text'>If you like this app, shoot me an <a href="mailto:dylanmolinabusiness@gmail.com">email</a> and put "productivity machine" in the subject line to get early access to the Notion chrome extension!</p> 
-                
+                <p className='extension-text'>If you like this app, shoot me an <a href="mailto:dylanmolinabusiness@gmail.com">email</a> and put "productivity machine" in the subject line to get early access to <span className='pstack'>pstack</span>, the ultimate app for your productivity stack! Also, consider upvoting on Product Hunt, it takes one second and would help me out!</p> 
+                <div className='p-hunt'>
+                <a href="https://www.producthunt.com/posts/productivity-machine?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-productivity&#0045;machine" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=374143&theme=dark" alt="productivity&#0032;machine - The&#0032;place&#0032;you&#0032;go&#0032;to&#0032;when&#0032;you&#0039;re&#0032;feeling&#0032;restless&#0046; | Product Hunt" style={{ width: "250px", height: "54px" }} width="250" height="54" /></a>
+                </div>
               </div>
             </div>
           )}
